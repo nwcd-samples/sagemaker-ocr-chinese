@@ -3,8 +3,7 @@
 中文 文本区域检测和文本识别的pytorch实现
 
 
-
-# 文本识别
+# 文本识别 Demo 测试
 
 修改对应参数  输入输出文件夹路径 以及两个模型的路径 
 ```
@@ -68,21 +67,8 @@ sh generation.sh 'demo.txt'  0.2   ../output/
 ### 进行文本识别训练
 
 ```
-cd recognition
+cd atte
 sh run.sh
-
-```
-
-### 中文识别测试
-
-```
-python3 demo.py \
---Transformation TPS \
---FeatureExtraction ResNet\
---SequenceModeling BiLSTM \
---Prediction Attn \
---image_folder ../test_image/ \
---saved_model saved_model/None-VGG-BiLSTM-CTC-Seed1111\best_accuracy.pth
 
 ```
 
@@ -102,15 +88,3 @@ python3 demo.py \
 
 下载地址：[https://pan.baidu.com/s/1QkI7kjah8SPHwOQ40rS1Pw  ](https://pan.baidu.com/s/1QkI7kjah8SPHwOQ40rS1Pw)   (密码： `lu7m`  )
 
-
-
-```
-python3 create_lmdb_dataset.py --inputPath /home/ec2-user/datasets/DataSet/images --gtFile /home/ec2-user/datasets/DataSet/train_label.txt --outputPath ../output/train
-
-python3 create_lmdb_dataset.py --inputPath /home/ec2-user/datasets/DataSet/images --gtFile /home/ec2-user/datasets/DataSet/valid_label.txt --outputPath ../output/valid
-
-
-
-
-aws s3 cp temp/output/test012.json  s3://dikers-html/ocr_output/
-```
