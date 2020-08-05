@@ -145,7 +145,7 @@ def text_detection(args, net):
             #mask_file = os.path.join(output_dir , filename + '_mask.jpg')
             #cv2.imwrite(mask_file, score_text)
 
-            craft.file_utils.saveResult(image_path, image[:,:,::-1], polys, dirname=output_dir, write_image=False)
+            craft.file_utils.saveResult(image_path, image[:,:,::-1], polys, dirname=output_dir, write_image=True)
         except Exception:
             print("【Error】 图片[{}]  文本区域检测识别失败".format(image_path))
 
