@@ -8,7 +8,7 @@ fi
 if [ ! -f atte/saved_models/TPS-ResNet-BiLSTM-Attn-Seed1111/best_accuracy.pth ]; then
     echo 'Download  best_accuracy.pth ......'
     cd atte/saved_models/TPS-ResNet-BiLSTM-Attn-Seed1111/
-    wget https://dikers-data.s3.cn-northwest-1.amazonaws.com.cn/dataset/best_accuracy.pth
+    wget https://dikers-public.s3.cn-northwest-1.amazonaws.com.cn/model/ocr/best_accuracy.pth
     cd -
 fi
 
@@ -21,7 +21,7 @@ fi
 if [ ! -f craft/weights/craft_mlt_25k.pth ]; then
     echo 'Download  craft_mlt_25k.pth ......'
     cd craft/weights
-    wget https://dikers-data.s3.cn-northwest-1.amazonaws.com.cn/dataset/craft_mlt_25k.pth
+    wget https://dikers-public.s3.cn-northwest-1.amazonaws.com.cn/model/ocr/craft_mlt_25k.pth
     cd -
 fi
 

@@ -305,14 +305,18 @@ class OcrMain(object):
             results = results[0:len(lines)]
             
         
+        total_socre= 0.0
         for line, result in zip(lines, results) :
             new_line = '{},{:.4f},{}\n'.format(line.replace("\n", ''), float(result[2]), result[1] )
+            total_socre += float(result[2])
             new_lines.append(new_line)
+        
+        mean_socre = total_socre/len(results)
         
         file_name_dest = os.path.join(self.output_dir, label_file.split('/')[-1].split('.')[0] + '.json' )
         converToTextract = ConverToTextract( file_name_dest, image_file, new_lines)
         converToTextract.convert()
-        print('【输出】生成json文件{}.   识别{}个文本'.format(file_name_dest, len(results)))
+        print('【输出】生成json文件{}.   识别{}个文本, 平均得分 {:.4f}'.format(file_name_dest, len(results), mean_socre))
         
 
     def main(self):
